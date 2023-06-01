@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <div class="container">
+    <form action="/" method="post">
+      <label for="cityInput">City Name: </label>
+      <input id="cityInput" type="text" name="cityName" value="">
+      <button type="submit">Go</button>
+    </form>
+
+    <% if (data) { %>
+      <div id="weatherCard" class="weather-card">
+        <h2 id="cityName"><%= data.query %></h2>
+        <div class="temperature" id="temperature"><%= data.temp %>°C</div>
+        <div class="description" id="weatherDescription">
+          <h8>The weather description is:</h8>
+          <%= data.weatherDescription %>
+        </div>
+        <img src="<%= data.imageURL %>" alt="Weather Icon" class="icon" id="weatherIcon">
+      </div>
+    <% } %>
+  </div>
+    <script src="app.js"></script>
+  </body>
+</html>
+
+
+
